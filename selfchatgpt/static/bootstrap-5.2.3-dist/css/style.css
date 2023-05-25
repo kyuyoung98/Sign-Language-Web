@@ -1,0 +1,83 @@
+.member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 0px solid #000; /* 테두리 굵기와 색상 설정 */
+  }
+
+
+
+  .container a {
+    color: white;
+    font-weight: bold;
+  }
+
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .nav-item:hover .nav-menu {
+    display: block;
+  }
+
+  .site-header a {
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .col-md-5 h1,
+  .col-md-5 p {
+    margin-bottom: 10px;
+  }
+
+  .member{
+    margin-top : 50px;
+  }
+
+
+  .member h3 {
+    font-weight: bold;
+    font-size : 30px
+  }
+
+  .member p {
+    font-size : 20px
+  }
+
+  .team {
+      margin-top: 60px;
+    }
+
+   .team .h3 {
+      margin-top: 30px;
+    }
+  
+    .team .member img {
+      margin-bottom: 40px;
+    }
+
+
+    .custom-background {
+      position: relative;
+      background-image: url('https://i0.wp.com/cms.babbel.news/wp-content/uploads/2021/04/Refresh_ASL.png?fit=1200%2C675&strip=none&ssl=1');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .custom-text {
+      color: black;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    

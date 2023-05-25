@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.img-with-font {
+  color: white;
+}
+
+.bg-img {
+  position: relative;
+  background-image: url('https://i0.wp.com/cms.babbel.news/wp-content/uploads/2021/04/Refresh_ASL.png?fit=1200%2C675&strip=none&ssl=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.bg-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 투명도 조절 */
+  z-index: -1;
+}
+
+.bg-img1 {
+  position: relative;
+  background-image: url('../../img/gpt.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.bg-img1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 투명도 조절 */
+  z-index: -1;
+}
+
+.bg-img2 {
+  position: relative;
+  background-image: url('../../img/sueo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.bg-img2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 투명도 조절 */
+  z-index: -1;
+}
+
+h1 {
+  z-index: 100;
+}
+
+html, body {
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  background-color: #d9d9d9;
+}
+
+.member-img {
+  border-radius: 250px;
+}
+
+.member-name {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.head-font {
+  font-weight: normal;
+  font-size: 3rem;
+}

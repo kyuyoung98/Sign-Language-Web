@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sign Language</title>
+
+  <!-- CSS -->
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/product/">
+  <link rel="stylesheet" href="{% static "bootstrap-5.2.3-dist/css/bootstrap.min.css" %}"/>
+  <link rel="stylesheet" href="{% static "bootstrap-5.2.3-dist/css/product.css" %}"/>
+  <link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/base.css' %}" type="text/css"/>
+
+  <!-- 수정한 스크립트 부분 -->
+  <script>
+    let idNum = 0;
+    
+    function addFile() {
+      const fileModule = document.getElementById('file-module-' + idNum);
+      const newNode = fileModule.cloneNode(true);
+      idNum++;
+      newNode.id = 'file-module-' + idNum;
+      fileModule.after(newNode);
+    }
+    function deleteFile() {
+      if (idNum === 0) {
+        return;
+      }
+      const fileModule = document.getElementById('file-module-' + idNum);
+      if (fileModule) {
+        fileModule.remove();
+        idNum--;
+      }
+    }
+  </script>
+
+</head>
+<body>
+{% include '../header.html' %}
+<main>
+  <!-- body 1-->
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary bg-img2 img-with-font">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">Sign Language</h1>
+      <p class="lead fw-normal">You can predict sign language to use image.</p>
+    </div>
+  </div>
+
+  <!-- body 2 -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 pb-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">File Upload</h2>
+        <p class="lead">ChatGPT로 요청할 수어동작을 업로드 해주세요.</p>
+        <!-- 파일 업로드 부분 -->
+        <form action="chat" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <span id="file-module-0">
+            <div class="h-10 p-2 text-bg-dark rounded-3">
+              <input name="files" type="file">
+            </div>
+          </span>
+          <div class="container-fluid py-2">
+            <button class="btn btn-primary btn-sm" onclick="addFile()" type="button">Add File</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteFile()" type="button">Delete File</button>
+          </div>
+          <div>
+            <input class=" btn btn-success btn-lg" type="submit" value="Request to ChatGPT">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Answer</h2>
+        <p class="lead">chatGPT의 답변이에요.</p>
+        <div class="container-fluid py-3">
+          <div class="h-100 p-5 text-bg-dark rounded-3">
+            <h3 class="fw-bold">???</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>   
+</body>
+<script src="{% static "bootstrap-5.2.3-dist/js/bootstrap.min.js" %}"></script>
+</html>
+
